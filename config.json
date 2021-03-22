@@ -1,0 +1,20 @@
+{
+    "params":
+    {
+        "local_server":"True",
+        "local_uri": "mysql://root:@localhost:3307/myblogs",
+        "prod_uri": "mysql://root:@localhost:3307/myblogs",
+        "fb_url":"https://facebook.com/myblogs",
+        "twit_url":"https://twitter.com/myblogs" ,
+        "git_url":"https://github.com/myblogs",
+        "blog_name": "My Blogs",
+        "gmail-user": "2019aaftab.shaikh@ves.ac.in",
+        "gmail-password":"Ksaa*083937",
+        "about_text": "This is a Python mini project. This project is about Blog website. This project is created by 1. Aaftab Shaikh\n2. Adarsh Panigrahi\n3. Prathmesh Kesarkar\n4. Mangesh Sokalwar",
+        "no_of_posts": 2,
+        "login_image": "person-circle.svg",
+        "admin_user": "Project",
+        "admin_password": "hello",
+        "upload_location": "D:\\python\\Flask"
+    }
+}
