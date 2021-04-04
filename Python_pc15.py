@@ -56,7 +56,7 @@ class Posts(db.Model):
 @app.route("/")
 def home():
     posts = Posts.query.filter_by().all()
-    last = math.ceil(len(posts)/int(params['no_of_posts']))
+    last_page = math.ceil(len(posts)/int(params['no_of_posts']))
 
     page = request.args.get('page')
     if(not str(page).isnumeric()):
@@ -68,7 +68,7 @@ def home():
     if (page==1):
         prev = "#"
         next = "/?page="+ str(page+1)
-    elif(page==last):
+    elif(page==last_page):
         prev = "/?page="+ str(page-1)
         next= "#"
     else:
@@ -127,13 +127,13 @@ def edit(sno):
         post = Posts.query.filter_by(sno=sno).first()
         return render_template('edit.html',params=params,post=post,sno=sno)
 
-@app.route("/uploader",methods = ['GET','POST'])
-def uploader():
-    if ('user' in session and session['user'] == params['admin_user']):
-        if(request.method =='POST'):
-            f = request.files['file1']
-            f.save(os.path.join(app.config['UPLOAD_FOLDER'],secure_filename(f.filename)))
-            return "Upload Successfull!"
+#@app.route("/uploader",methods = ['GET','POST'])
+#def uploader():
+#    if ('user' in session and session['user'] == params['admin_user']):
+#        if(request.method =='POST'):
+#            f = request.files['file1']
+#            f.save(os.path.join(app.config['UPLOAD_FOLDER'],secure_filename(f.filename)))
+#            return "Upload Successfull!"
 
 @app.route("/logout")
 def logout():
