@@ -14,7 +14,6 @@
         "no_of_posts": 2,
         "login_image": "person-circle.svg",
         "admin_user": "Project",
-        "admin_password": "hello",
-        "upload_location": "D:\\python\\Flask"
+        "admin_password": "hello"
     }
 }
