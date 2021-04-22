@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+{% block body %}
+
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url(' {{ url_for('static' , filename = 'img/analy.jpg')}}')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="site-heading">
+            <h1>Analysis</h1>
+            <span class="subheading">Analysis on basis of posts added by Admin.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  	<div class="col-lg-8 col-md-10 mx-auto">
+
+      
+      
+      <img src="{{url}}" alt="Chart" height="auto" width="100%">
+      <br>
+      <hr>
+      <p>
+        <h3>Analysis on the basis of how frequently posts are added by admin is done between 2 weeks of interval.</h3><br>
+        <h4>Showing Analysis with respect to the graphs plotted</h4><br>
+        <b>Total posts added 2 weeks before:&ensp;{{p1}} </b><br>
+        <b>Total posts added 1 week before:&ensp; &ensp;{{p2}} </b><br>
+        <b>Avg. of posts posted 2 weeks before: &ensp;{{avg_posts_2}}</b><br>
+        <b>Avg. of posts posted 1 week before: &ensp; &nbsp;{{avg_posts_1}}</b><br>
+        
+        {% if incre >=0 and incre <= 1 %}
+        <b>Posts ratio: &ensp;{{incre}} (Increase in factor)</b>
+        {% else %}
+        <b>Posts ratio: &ensp; {{decre}} (Decrease in factor)</b>
+        {% endif %}
+        <br><br>
+        <hr>
+
+        {% if incre >=0 and incre <= 1 %}
+        <h3 style="color: green">Thus, Blog get updated by Admin on regular Basis</h3>
+        {% else %}
+        <h3 style="color: red">Thus, Blog do not get updated by Admin on regular Basis</h3>
+        {% endif %}
+      </p>
+        
+        
+      </div>
+    </div>
+  </div>
+
+  {% endblock %}
